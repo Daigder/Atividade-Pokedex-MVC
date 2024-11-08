@@ -68,4 +68,7 @@
 Trabalhar neste projeto foi uma experiência incrível! Mesmo sem grande conhecimento sobre Pokémon, acabei desenvolvendo um verdadeiro interesse em entender os detalhes para aprimorar cada aspecto. Aprendi muito sobre JavaScript, CSS e o uso de APIs, sendo esse meu primeiro contato prático com a PokéAPI. Ainda que alguns detalhes tenham ficado para trás, pretendo melhorar o projeto no futuro. A página da Arena, infelizmente, não será implementada agora, mas estou ansioso para explorá-la mais adiante, pois adoro desafios. Meu objetivo não é apenas finalizar o projeto, mas entregar o melhor projeto. Muito obrigado!
 
 
+![AnipokePokemonGIF](https://github.com/user-attachments/assets/dfb80b64-623e-46ab-8914-9da4c4b62dc4)
+
+
 
