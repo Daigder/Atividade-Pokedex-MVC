@@ -1,0 +1,152 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo da barra de navegação */
+.navbar {
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+}
+
+.navbar .nav-link:hover {
+    color: #ffcc00; /* Cor amarela ao passar o mouse */
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ffcc00;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Restante do CSS */
+h1 {
+    letter-spacing: 5px;
+}
+
+.pokeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.pokemon {
+    background-color: #e5ffb5;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 150px;
+    height: 120px;
+    text-align: center;
+}
+
+.imgContainer img {
+    max-width: 90%;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.number {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 2px 13px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.name {
+    margin: 15px 0px 7px;
+    letter-spacing: 1.5px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #e6e6e6;
+    border-radius: 25px;
+    padding: 10px 15px;
+    width: 300px;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #333;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.search-bar input::placeholder {
+    color: #888;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+.search-bar button:hover {
+    color: #0056b3;
+}
+
+.search-bar:hover {
+    background-color: #d9d9d9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

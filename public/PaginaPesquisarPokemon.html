@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="icon" type="image/x-icon" href="./images/LogoPokeball.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/stylePaginaPesquisarPokemon.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="/paginaInicial.html" class="nav-link">Início</a>
+        <a href="/paginaPesquisarPokemon.html" class="nav-link">Pesquisar Pokémon</a>
+        <a href="/paginaListaTreinadores.html" class="nav-link">Lista de Treinadores</a>
+        <a href="/arena.html" class="nav-link">Arena</a>
+    </nav>
+
+    <img src="./images/LogoTipoPokemon.jpg" width="200px" alt="Logo Pokémon">
+    <header>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Pesquisar Pokémon...">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+                    <path fill="#FFFFFF" d="M505 442.7L405.3 343c28.4-34.9 45.7-79 45.7-126C451 103.5 348.5 1 224 1S-3 103.5-3 217s102.5 216 227 216c47 0 91.1-17.3 126-45.7l99.7 99.7c10 10 23 10 33 0l21.3-21.3c10-10 10-23 0-33zm-281 18.3C121.3 461 41 380.7 41 282S121.3 103 224 103s183 80.3 183 179-80.3 179-183 179z"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+    
+    <div class="pokeContainer" id="pokeContainer"></div>    
+    <script src="/scripts/scriptPagPesquisarPokemon.js"></script>
+</body>
+</html>

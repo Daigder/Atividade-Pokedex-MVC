@@ -1,0 +1,228 @@
+/* Reseta o layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    background: url('/public/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    height: 100vh;
+    padding: 80px 20px;
+}
+
+/* Fomulario */
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 55px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px; 
+}
+
+/* Estilização do título */
+h1 {
+    text-align: center;
+    color: #201c1c;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilização das Pokébolas decorativas */
+.pokeball-top, .pokeball-bottom {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #000;
+}
+
+.pokeball-top {
+    top: -40px;
+    left: calc(50% - 40px);
+    background: linear-gradient(180deg, #ff0000 50%, #fff 50%);
+}
+
+.pokeball-bottom {
+    bottom: -40px;
+    left: calc(50% - 40px);
+    background: linear-gradient(0deg, #ff0000 50%, #fff 50%);
+}
+
+/* Estilização do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    border: 2px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Estilização dos botões */
+button {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ffdf80;
+}
+
+/* Container flexível para os cards */
+.pokemon-cards-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Card do Pokémon */
+.pokemon-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 250px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 20px; /* Adiciona espaçamento entre cards se houver mais de um */
+}
+.pokemon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem do Pokémon */
+.pokemon-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #ffcc00;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card img:hover {
+    transform: scale(1.05);
+}
+
+/* Nome do Pokémon */
+.pokemon-card h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* Detalhes do Pokémon */
+.pokemon-card .details {
+    text-align: left;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 15px;
+}
+
+.pokemon-card .details p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.pokemon-card .details p strong {
+    color: #ffcc00;
+}
+
+@media(max-width: 500px) {
+    .input-group {
+        flex-direction: column;
+    }
+
+    .input-group input {
+        width: 100%;
+    }
+}
+
+#altura, #peso {
+    width: 49%;
+}
+
+.input-group {
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Estilização do container de input file */
+.file-upload {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.file-upload input[type="file"] {
+    display: none; /* Esconde o input padrão de file */
+}
+
+.file-upload-label {
+    background-color: #ffcc00;
+    color: rgb(0, 0, 0);
+    padding: 12px 55px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.file-upload-label:hover {
+    background-color: #ffdf80;
+}
+
+/* Texto do arquivo selecionado */
+.file-upload-text {
+    margin-left: 15px;
+    font-size: 0.9rem;
+    color: #333;
+}

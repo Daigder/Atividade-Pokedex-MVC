@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/LogoPokeball.jpg">
+    <title>Registro de Treinador Pokémon</title>
+    <style>
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: url('./images/background5.jpg') no-repeat center center fixed;
+    background-size: cover;
+    overflow-y: auto;
+}
+
+/* Container do formulário */
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(245, 247, 250, 0.85), rgba(195, 207, 226, 0.85));
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h2 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos grupos de campos */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Estilo dos campos de entrada */
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border 0.3s;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: #6a9ae2;
+    outline: none;
+}
+
+/* Estilo do botão de registro */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6a9ae2;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #588ac7;
+}
+
+/* Estilo da lista de sugestões de Pokémon */
+.pokemon-list {
+    max-height: 100px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.pokemon-list div {
+    padding: 10px;
+    cursor: pointer;
+    color: #555;
+}
+
+.pokemon-list div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo dos Pokémon selecionados */
+#selectedPokemon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.selected-pokemon {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f3f6fb;
+    width: 80px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.selected-pokemon img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.pokemon-types {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.pokemon-type {
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #777;
+}
+
+/* Estilos de tipos de Pokémon específicos */
+.pokemon-type.grass { background-color: #78C850; }
+.pokemon-type.fire { background-color: #F08030; }
+.pokemon-type.water { background-color: #6890F0; }
+.pokemon-type.electric { background-color: #F8D030; }
+.pokemon-type.psychic { background-color: #F85888; }
+.pokemon-type.ice { background-color: #98D8D8; }
+.pokemon-type.dragon { background-color: #7038F8; }
+.pokemon-type.dark { background-color: #705848; }
+.pokemon-type.fairy { background-color: #EE99AC; }
+.pokemon-type.normal { background-color: #A8A878; }
+.pokemon-type.flying { background-color: #A890F0; }
+.pokemon-type.rock { background-color: #B8A038; }
+.pokemon-type.ground { background-color: #E0C068; }
+.pokemon-type.poison { background-color: #A040A0; }
+.pokemon-type.bug { background-color: #A8B820; }
+.pokemon-type.ghost { background-color: #705898; }
+.pokemon-type.steel { background-color: #B8B8D0; }
+.pokemon-type.fighting { background-color: #C03028; }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Cadastro de Treinador</h2>
+    <form id="trainerForm">
+        <div class="form-group">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="age">Idade:</label>
+            <input type="number" id="age" min="1" max="120" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="city">Cidade:</label>
+            <input type="text" id="city" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="gender">Gênero:</label>
+            <select id="gender" required>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="team">Equipe:</label>
+            <select id="team" required>
+                <option value="Aquan">Equipe Aquan</option>
+                <option value="Dim Sun">Equipe Dim Sun</option>
+                <option value="Flare">Equipe Flare</option>
+                <option value="Galactic">Equipe Galactic</option>
+                <option value="Go-Rock">Equipe Go-Rock</option>
+                <option value="Magma">Equipe Magma</option>
+                <option value="Pinchers">Equipe Pinchers</option>
+                <option value="Plasma">Equipe Plasma</option>
+                <option value="Rocket">Equipe Rocket</option>
+                <option value="Ultra Esquadrão Recon">Equipe Ultra Esquadrão Recon</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="pokemon">Pokémons (até 6):</label>
+            <input type="text" id="pokemonInput" placeholder="Digite o nome do Pokémon">
+            <div id="pokemonList" class="pokemon-list"></div>
+            <div id="selectedPokemon" class="selected-pokemon-container"></div>
+        </div>
+        
+
+        <button type="submit">Registrar</button>
+    </form>
+</div>
+
+<script src="./scripts/scripyPagTreinador.js"></script>
+
+</body>
+</html>

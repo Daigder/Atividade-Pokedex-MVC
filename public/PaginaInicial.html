@@ -1,0 +1,87 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <title>Home Pokemon</title>
+    <link rel="icon" type="image/x-icon" href="./images/LogoPokeball.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styleGlobal.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="background">
+            <video autoplay loop muted>
+                <source src="./images/PokémonVideo.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div id="app">
+            <header>
+                <img src="./images/LogoTipoPokemon.jpg" alt="Logo Pokémon">
+
+                <ul class="navigation">
+                    <li>
+                        <a href="PaginaInicial.html" class="navigation_link">Início</a>
+                    </li>
+                    <li>
+                        <a href="PaginaPesquisarPokemon.html" class="navigation_link">Pesquisar Pokémon</a>
+                    </li>
+                    <li>
+                        <a href="PaginaListaTreinadores.html" class="navigation_link">Lista de Treinadores</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navigation_link">Arena</a>
+                    </li>
+                </ul>
+                
+                <div class="navigation_social">
+                    
+                </div>
+            </header>
+
+            <main>
+                <div class="main_info">
+                    <img 
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-easing="ease-in-out"
+                    src="./images/pokemonlogo02.jpg" 
+                    width="650px" alt="Logo Pokémon">
+
+                    <p            
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    data-aos-duration="800"
+                    data-aos-easing="ease-in-out">
+                        Sua jornada para se tornar um grande treinador começa aqui. Cadastre-se, escolha sua equipe e prepare-se para batalhas incríveis. Aventuras, desafios e conquistas estão à sua espera!
+                    </p>
+
+                    <div
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                    data-aos-duration="800"
+                    data-aos-easing="ease-in-out">
+                        <a href="PaginaTreinador.html" target="_blank">
+                            <button>Registrar Treinador</button>
+                        </a>
+                    </div>
+                </div>
+
+                <img
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-duration="800"
+                data-aos-easing="ease-in-out"
+                src="./images/pokemonlogo03.jpg" 
+                width="190" alt="Logo Pokémon 03">
+            </main>
+        </div>
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+        AOS.init();
+        </script>
+    </body>
+    </html>

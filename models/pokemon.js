@@ -1,17 +1,21 @@
-class Pokemon {
-    constructor(nome, tipo, altura, peso, nivelDePoder, imagem) {
-        this.nome = nome;
-        this.tipo = tipo;
-        this.altura = altura;
-        this.peso = peso;
-        this.nivelDePoder = nivelDePoder;
-        this.imagem = imagem;
+'use strict';
+const { Model } = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Pokemon extends Model {
+    static associate(models) {
+      // Definir associações aqui, se necessário
     }
-
-    descrever() {
-        return `${this.nome} é um Pokémon do tipo ${this.tipo}, com altura de ${this.altura}m, peso de ${this.peso}kg, nível de poder: ${this.nivelDePoder}. Imagem: ${this.imagem}`;
-    }
-}
-
-module.exports = Pokemon;
-
+  }
+  Pokemon.init({
+    name: DataTypes.STRING,
+    type: DataTypes.STRING,
+    level: DataTypes.INTEGER,
+    trainerId: DataTypes.INTEGER // Exemplo de campo adicional
+  }, {
+    sequelize,
+    modelName: 'Pokemon',
+    tableName: 'Pokemons', // Nome da tabela correspondente no banco de dados
+    timestamps: true // Incluir createdAt e updatedAt
+  });
+  return Pokemon;
+};
